@@ -1,0 +1,39 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-obsidian text-[#b9cac9] antialiased overflow-x-hidden m-0 p-0;
+    /* The "Scanline" Overlay */
+    background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
+    background-size: 100% 4px;
+  }
+}
+
+@layer utilities {
+  .glassmorphism {
+    @apply bg-[rgba(255,255,255,0.03)] backdrop-blur-[12px] border border-[rgba(255,255,255,0.1)];
+  }
+  
+  .glow-btn {
+    @apply bg-cyan-accent text-[#003737] rounded-md shadow-[0_0_20px_rgba(0,255,255,0.4)] transition-all hover:shadow-[0_0_30px_rgba(0,255,255,0.6)] font-display font-semibold px-6 py-2 uppercase tracking-widest;
+  }
+  
+  .ghost-btn {
+    @apply bg-[rgba(255,255,255,0.0)] border border-[rgba(255,255,255,0.15)] text-white hover:bg-[rgba(255,255,255,0.05)] rounded-md transition-all font-display font-semibold px-6 py-2 uppercase tracking-widest;
+  }
+
+  .text-glow {
+    text-shadow: 0 0 10px rgba(0, 255, 255, 0.5);
+  }
+
+  @keyframes marquee {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(calc(-100% - 3rem)); }
+  }
+
+  .animate-marquee {
+    animation: marquee 30s linear infinite;
+  }
+}
