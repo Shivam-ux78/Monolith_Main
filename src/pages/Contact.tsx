@@ -67,8 +67,8 @@ export default function Contact() {
     return (
         <div className="relative w-full min-h-screen text-white flex items-center justify-center">
             <HeroScene type="contact" />
-            <div className="relative z-10 w-full max-w-4xl mx-auto px-12 md:px-24">
-                <div className="glassmorphism p-12 md:p-16 rounded-md border border-[rgba(0,255,255,0.1)] shadow-[0_0_40px_rgba(0,0,0,0.8)] mx-auto max-w-2xl relative overflow-hidden">
+            <div className="relative z-10 w-full max-w-4xl mx-auto px-4 sm:px-6 md:px-12 lg:px-24 py-8 md:py-0">
+                <div className="glassmorphism p-6 sm:p-10 md:p-12 lg:p-16 rounded-md border border-[rgba(0,255,255,0.1)] shadow-[0_0_40px_rgba(0,0,0,0.8)] mx-auto max-w-2xl relative overflow-hidden">
                     {/* Tech accent lines */}
                     <div className="absolute top-0 left-0 w-8 h-[2px] bg-[#00FFFF]"></div>
                     <div className="absolute top-0 left-0 w-[2px] h-8 bg-[#00FFFF]"></div>
@@ -83,8 +83,8 @@ export default function Contact() {
                                 </svg>
                             </div>
                             <div>
-                                <h2 className="font-display text-3xl font-bold text-white uppercase tracking-tight mb-2">Request Submitted</h2>
-                                <p className="font-sans text-[#b9cac9] text-sm">Your secure transmission has been received. I will establish a connection shortly.</p>
+                                <h2 className="font-display text-2xl sm:text-3xl font-bold text-white uppercase tracking-tight mb-2">Request Submitted</h2>
+                                <p className="font-sans text-[#b9cac9] text-xs sm:text-sm">Your secure transmission has been received. I will establish a connection shortly.</p>
                             </div>
                             <div className="flex flex-col space-y-4 pt-4">
                                 <a 
@@ -95,48 +95,48 @@ export default function Contact() {
                                 >
                                     CONTACT ON WHATSAPP
                                 </a>
-                                <button onClick={() => setSuccess(false)} className="text-[#00FFFF] text-[10px] tracking-widest uppercase opacity-50 hover:opacity-100 transition-opacity">
+                                <button onClick={() => setSuccess(false)} className="text-[#00FFFF] text-[9px] sm:text-[10px] tracking-widest uppercase opacity-50 hover:opacity-100 transition-opacity">
                                     Send another message
                                 </button>
                             </div>
                         </div>
                     ) : (
                         <>
-                            <div className="mb-12 text-center md:text-left">
-                                <h2 className="font-display text-4xl font-bold text-glow text-[#00FFFF] mb-3 uppercase tracking-tight">Let's Build Something</h2>
-                                <p className="font-sans text-[#b9cac9] text-sm tracking-wide opacity-80 border-l border-[rgba(255,255,255,0.2)] pl-4 py-1 inline-block md:block">Fill out the details below and we will get back to you shortly.</p>
+                            <div className="mb-8 sm:mb-12 text-center md:text-left">
+                                <h2 className="font-display text-3xl sm:text-4xl font-bold text-glow text-[#00FFFF] mb-3 uppercase tracking-tight">Let's Build Something</h2>
+                                <p className="font-sans text-[#b9cac9] text-xs sm:text-sm tracking-wide opacity-80 border-l border-[rgba(255,255,255,0.2)] pl-4 py-1 inline-block md:block">Fill out the details below and let's create something amazing together.</p>
                             </div>
 
                             <form onSubmit={handleSubmit} className="flex flex-col space-y-6">
-                                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
                                     <div className="flex flex-col relative group">
                                         <label className="font-sans text-xs text-[#00FFFF] uppercase mb-2 opacity-80 group-hover:opacity-100 transition-opacity font-semibold">Full Name</label>
-                                        <input type="text" name="name" required value={formData.name} onChange={handleChange} className="bg-[#0A192F] bg-opacity-30 border border-[rgba(255,255,255,0.1)] rounded px-4 py-3 text-white focus:outline-none focus:border-[#00FFFF] transition-all hover:border-[rgba(0,255,255,0.3)] w-full placeholder-[rgba(255,255,255,0.2)] focus:bg-[rgba(0,255,255,0.05)]" placeholder="John Doe" />
+                                        <input type="text" name="name" required value={formData.name} onChange={handleChange} className="bg-[#0A192F] bg-opacity-30 border border-[rgba(255,255,255,0.1)] rounded-md px-3 sm:px-4 py-2.5 sm:py-3 text-sm text-white placeholder-[rgba(255,255,255,0.3)] focus:outline-none focus:border-[#00FFFF] transition-colors" placeholder="Your name" />
                                     </div>
                                     
                                     <div className="flex flex-col relative group">
                                         <label className="font-sans text-xs text-[#00FFFF] uppercase mb-2 opacity-80 group-hover:opacity-100 transition-opacity font-semibold">Email Address</label>
-                                        <input type="email" name="email" required value={formData.email} onChange={handleChange} className="bg-[#0A192F] bg-opacity-30 border border-[rgba(255,255,255,0.1)] rounded px-4 py-3 text-white focus:outline-none focus:border-[#00FFFF] transition-all hover:border-[rgba(0,255,255,0.3)] w-full placeholder-[rgba(255,255,255,0.2)] focus:bg-[rgba(0,255,255,0.05)]" placeholder="john@example.com" />
+                                        <input type="email" name="email" required value={formData.email} onChange={handleChange} className="bg-[#0A192F] bg-opacity-30 border border-[rgba(255,255,255,0.1)] rounded-md px-3 sm:px-4 py-2.5 sm:py-3 text-sm text-white placeholder-[rgba(255,255,255,0.3)] focus:outline-none focus:border-[#00FFFF] transition-colors" placeholder="your@email.com" />
                                     </div>
 
                                     <div className="flex flex-col relative group">
                                         <label className="font-sans text-xs text-[#00FFFF] uppercase mb-2 opacity-80 group-hover:opacity-100 transition-opacity font-semibold">Phone Number</label>
-                                        <input type="tel" name="phone" value={formData.phone} onChange={handleChange} className="bg-[#0A192F] bg-opacity-30 border border-[rgba(255,255,255,0.1)] rounded px-4 py-3 text-white focus:outline-none focus:border-[#00FFFF] transition-all hover:border-[rgba(0,255,255,0.3)] w-full placeholder-[rgba(255,255,255,0.2)] focus:bg-[rgba(0,255,255,0.05)]" placeholder="(555) 123-4567" />
+                                        <input type="tel" name="phone" value={formData.phone} onChange={handleChange} className="bg-[#0A192F] bg-opacity-30 border border-[rgba(255,255,255,0.1)] rounded-md px-3 sm:px-4 py-2.5 sm:py-3 text-sm text-white placeholder-[rgba(255,255,255,0.3)] focus:outline-none focus:border-[#00FFFF] transition-colors" placeholder="+1 (123) 456-7890" />
                                     </div>
 
                                     <div className="flex flex-col relative group">
                                         <label className="font-sans text-xs text-[#00FFFF] uppercase mb-2 opacity-80 group-hover:opacity-100 transition-opacity font-semibold">Business Name</label>
-                                        <input type="text" name="businessName" value={formData.businessName} onChange={handleChange} className="bg-[#0A192F] bg-opacity-30 border border-[rgba(255,255,255,0.1)] rounded px-4 py-3 text-white focus:outline-none focus:border-[#00FFFF] transition-all hover:border-[rgba(0,255,255,0.3)] w-full placeholder-[rgba(255,255,255,0.2)] focus:bg-[rgba(0,255,255,0.05)]" placeholder="Company LLC" />
+                                        <input type="text" name="businessName" value={formData.businessName} onChange={handleChange} className="bg-[#0A192F] bg-opacity-30 border border-[rgba(255,255,255,0.1)] rounded-md px-3 sm:px-4 py-2.5 sm:py-3 text-sm text-white placeholder-[rgba(255,255,255,0.3)] focus:outline-none focus:border-[#00FFFF] transition-colors" placeholder="Your company" />
                                     </div>
                                 </div>
 
                                 <div className="flex flex-col relative group">
                                     <label className="font-sans text-xs text-[#00FFFF] uppercase mb-2 opacity-80 group-hover:opacity-100 transition-opacity font-semibold">Project Details</label>
-                                    <textarea rows={4} name="message" required value={formData.message} onChange={handleChange} className="bg-[#0A192F] bg-opacity-30 border border-[rgba(255,255,255,0.1)] rounded px-4 py-3 text-white focus:outline-none focus:border-[#00FFFF] transition-all hover:border-[rgba(0,255,255,0.3)] w-full resize-none placeholder-[rgba(255,255,255,0.2)] focus:bg-[rgba(0,255,255,0.05)]" placeholder="Tell us about the website you need built..."></textarea>
+                                    <textarea rows={4} name="message" required value={formData.message} onChange={handleChange} className="bg-[#0A192F] bg-opacity-30 border border-[rgba(255,255,255,0.1)] rounded-md px-3 sm:px-4 py-2.5 sm:py-3 text-sm text-white placeholder-[rgba(255,255,255,0.3)] focus:outline-none focus:border-[#00FFFF] transition-colors resize-none" placeholder="Tell me about your project..."></textarea>
                                 </div>
 
                                 <div className="pt-4">
-                                    <button type="submit" disabled={loading} className="glow-btn w-full hover:scale-[1.02] transition-transform duration-300 disabled:opacity-50 flex justify-center items-center h-[52px]">
+                                    <button type="submit" disabled={loading} className="glow-btn w-full hover:scale-[1.02] transition-transform duration-300 disabled:opacity-50 flex justify-center items-center gap-2">
                                         {loading ? <span className="w-4 h-4 border-2 border-white border-t-transparent rounded-full animate-spin"></span> : 'Submit Request'}
                                     </button>
                                 </div>
