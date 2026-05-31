@@ -9,6 +9,19 @@
     background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
     background-size: 100% 4px;
   }
+
+  /* Responsive typography */
+  @screen sm {
+    body {
+      font-size: 14px;
+    }
+  }
+
+  @screen md {
+    body {
+      font-size: 16px;
+    }
+  }
 }
 
 @layer utilities {
@@ -17,17 +30,18 @@
   }
   
   .glow-btn {
-    @apply bg-cyan-accent text-[#003737] rounded-md shadow-[0_0_20px_rgba(0,255,255,0.4)] transition-all hover:shadow-[0_0_30px_rgba(0,255,255,0.6)] font-display font-semibold px-6 py-2 uppercase tracking-widest;
+    @apply bg-cyan-accent text-[#003737] rounded-md shadow-[0_0_20px_rgba(0,255,255,0.4)] transition-all hover:shadow-[0_0_30px_rgba(0,255,255,0.6)] font-display font-semibold px-4 sm:px-6 py-2 uppercase text-xs sm:text-sm whitespace-nowrap;
   }
   
   .ghost-btn {
-    @apply bg-[rgba(255,255,255,0.0)] border border-[rgba(255,255,255,0.15)] text-white hover:bg-[rgba(255,255,255,0.05)] rounded-md transition-all font-display font-semibold px-6 py-2 uppercase tracking-widest;
+    @apply bg-[rgba(255,255,255,0.0)] border border-[rgba(255,255,255,0.15)] text-white hover:bg-[rgba(255,255,255,0.05)] rounded-md transition-all font-display font-semibold px-4 sm:px-6 py-2 uppercase text-xs sm:text-sm;
   }
 
   .text-glow {
     text-shadow: 0 0 10px rgba(0, 255, 255, 0.5);
   }
 
+  /* Marquee Animation */
   @keyframes marquee {
     0% { transform: translateX(0); }
     100% { transform: translateX(calc(-100% - 3rem)); }
@@ -35,5 +49,131 @@
 
   .animate-marquee {
     animation: marquee 30s linear infinite;
+  }
+
+  /* Responsive spacing utilities */
+  .responsive-padding {
+    @apply px-4 sm:px-6 md:px-12 lg:px-24;
+  }
+
+  .responsive-margin {
+    @apply my-8 sm:my-12 md:my-16 lg:my-24;
+  }
+
+  /* Mobile-first section styling */
+  .section-spacing {
+    @apply py-12 sm:py-16 md:py-24 lg:py-32;
+  }
+
+  /* Responsive heading sizes */
+  .heading-hero {
+    @apply text-3xl sm:text-4xl md:text-5xl lg:text-7xl font-bold tracking-tighter;
+  }
+
+  .heading-section {
+    @apply text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold;
+  }
+
+  /* Responsive grid utilities */
+  .grid-responsive {
+    @apply grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8;
+  }
+
+  .grid-2col {
+    @apply grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8;
+  }
+
+  /* Mobile menu toggle */
+  .mobile-menu-toggle {
+    @apply md:hidden;
+  }
+
+  /* Hide on mobile */
+  .hide-mobile {
+    @apply hidden md:block;
+  }
+
+  /* Responsive border utilities */
+  .border-accent {
+    @apply border-[rgba(255,255,255,0.05)] md:border-[rgba(255,255,255,0.1)];
+  }
+
+  /* Responsive text sizes */
+  .text-sm-responsive {
+    @apply text-xs sm:text-sm md:text-base;
+  }
+
+  .text-lg-responsive {
+    @apply text-sm sm:text-base md:text-lg lg:text-xl;
+  }
+
+  /* Stat cards responsive */
+  .stat-card {
+    @apply flex flex-col space-y-2 md:space-y-4;
+  }
+
+  /* Form input responsive */
+  .form-input-responsive {
+    @apply px-3 sm:px-4 py-2 sm:py-3 text-xs sm:text-sm;
+  }
+
+  /* Navbar responsive spacing */
+  .navbar-spacing {
+    @apply pl-16 sm:pl-20 md:pl-20 lg:pl-20 transition-all duration-300;
+  }
+
+  .navbar-spacing-expanded {
+    @apply pl-56 sm:pl-60 md:pl-60 transition-all duration-300;
+  }
+
+  /* Mobile-first container */
+  .responsive-container {
+    @apply w-full max-w-7xl mx-auto;
+  }
+
+  /* Responsive hero section */
+  .hero-section {
+    @apply min-h-screen flex items-center justify-center md:justify-start py-12 md:py-0;
+  }
+
+  /* Flex direction responsive */
+  .flex-responsive {
+    @apply flex flex-col md:flex-row;
+  }
+
+  /* Gap responsive */
+  .gap-responsive {
+    @apply gap-6 md:gap-12 lg:gap-16;
+  }
+}
+
+/* Media Queries for complex responsive behavior */
+@media (max-width: 640px) {
+  /* Mobile optimizations */
+  .overflow-x-hidden {
+    overflow-x: hidden;
+  }
+
+  /* Reduce animations on mobile for better performance */
+  @media (prefers-reduced-motion: reduce) {
+    * {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+}
+
+/* Landscape mode adjustments */
+@media (max-height: 500px) {
+  .min-h-screen {
+    min-height: auto;
+  }
+}
+
+/* Print styles */
+@media print {
+  body {
+    background-image: none;
   }
 }
